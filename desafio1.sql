@@ -39,19 +39,19 @@ CREATE TABLE SpotifyClone.musicas(
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.seguindo_artistas(
-    seguido_id INT NOT NULL,
-    seguidor_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY(seguido_id, seguidor_id),
-    FOREIGN KEY (seguido_id) REFERENCES artista (artista_id),
-    FOREIGN KEY (seguidor_id) REFERENCES usuario (usuario_id)
+    seguido_ida INT NOT NULL,
+    seguidor_ida INT NOT NULL,
+    CONSTRAINT PRIMARY KEY(seguido_ida, seguidor_ida),
+    FOREIGN KEY (seguido_ida) REFERENCES artista (artista_id),
+    FOREIGN KEY (seguidor_ida) REFERENCES usuario (usuario_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.historico_reproducoes(
-    usuario_id INT NOT NULL,
-    musica_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY(usuario_id, musica_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
-    FOREIGN KEY (musica_id) REFERENCES musicas (musica_id)
+    usuario_idh INT NOT NULL,
+    musica_idh INT NOT NULL,
+    CONSTRAINT PRIMARY KEY(usuario_idh, musica_idh),
+    FOREIGN KEY (usuario_idh) REFERENCES usuario (usuario_id),
+    FOREIGN KEY (musica_idh) REFERENCES musicas (musica_id)
 ) ENGINE = InnoDB;
 
 INSERT INTO SpotifyClone.plano (plano_name, plano_valor)
