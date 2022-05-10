@@ -139,7 +139,7 @@ VALUES
   (10, 6, "Baby", 136),
   (10, 6, "you Make Me Feel So..", 83);
 
-INSERT INTO SpotifyClone.seguindo_artistas (seguidor_id, seguido_id)
+INSERT INTO SpotifyClone.seguindo_artistas (seguidor_ida, seguido_ida)
 VALUES
   (1, 1),
   (1, 4),
@@ -164,7 +164,7 @@ VALUES
   (10, 2),
   (10, 6);
 
-INSERT INTO SpotifyClone.historico_reproducoes (usuario_id, musica_id)
+INSERT INTO SpotifyClone.historico_reproducoes (usuario_idh, musica_idh)
 VALUES
   (1, 36),
   (1, 25),
