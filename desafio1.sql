@@ -24,18 +24,18 @@ CREATE TABLE SpotifyClone.artista(
 
 CREATE TABLE SpotifyClone.album(
     album_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    artista_id INT NOT NULL,
     album_name VARCHAR(100) NOT NULL,
-    ano_lancamento YEAR
+    ano_lancamento YEAR,
+    FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.musicas(
     musica_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     album_id INT NOT NULL,
-    artista_id INT NOT NULL,
     musica_name VARCHAR(100) NOT NULL,
     duracao_seg INT,
-    FOREIGN KEY (album_id) REFERENCES album (album_id),
-    FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
+    FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.seguindo_artistas(
@@ -83,61 +83,61 @@ VALUES
   ('Tyler Isle'),
   ('Fog');
 
-INSERT INTO SpotifyClone.album (album_name, ano_lancamento)
+INSERT INTO SpotifyClone.album (artista_id, album_name, ano_lancamento)
 VALUES
-  ('Envious', '1990'),
-  ('Exuberant', '1993'),
-  ('Hallowed Steam', '1995'),
-  ('Incandescent', '1998'), 
-  ('Temporary Culture', '2001'),
-  ('Library of liberty', '2003'),
-  ('Chained Down', '2007'),
-  ('Cabinet of fools', '2012'),
-  ('No guarantees', '2015'),
-  ('Apparatus', '2015');
+  (1, 'Envious', '1990'),
+  (1, 'Exuberant', '1993'),
+  (2, 'Hallowed Steam', '1995'),
+  (3, 'Incandescent', '1998'), 
+  (4, 'Temporary Culture', '2001'),
+  (4, 'Library of liberty', '2003'),
+  (5, 'Chained Down', '2007'),
+  (5, 'Cabinet of fools', '2012'),
+  (5, 'No guarantees', '2015'),
+  (6, 'Apparatus', '2015');
 
-INSERT INTO SpotifyClone.musicas (album_id, artista_id, musica_name, duracao_seg)
+INSERT INTO SpotifyClone.musicas (album_id, musica_name, duracao_seg)
 VALUES
-  (1, 1, 'Soul For Us', 200),
-  (1, 1, 'Reflections Of Magic', 163),
-  (1, 1, 'Dance With Her Own', 116),
-  (2, 1, 'Troubles Of My Inner Fire', 203),
-  (2, 1, 'Time Fireworks', 152),
-  (3, 2, 'Magic Circus', 105),
-  (3, 2, 'Honey, So Do I', 207),
-  (3, 2, "Sweetie, Let's Go Wild", 139),
-  (3, 2, 'She Knows', 244),
-  (4, 3, 'Fantasy For Me', 100),
-  (4, 3, 'Celebration Of More', 146),  
-  (4, 3, 'Rock His Everything', 223),  
-  (4, 3, 'Home Forever', 231),  
-  (4, 3, 'Diamond Power', 241),  
-  (4, 3, "Let's Be Silly", 132),  
-  (5, 4, 'Thang Of Thunder', 240),
-  (5, 4, 'Words Of Her Life', 185),  
-  (5, 4, 'Without My Streets', 176), 
-  (6, 4, 'Need Of The Evening', 190),  
-  (6, 4, 'History Of My Roses', 222),  
-  (6, 4, 'Without My Love', 111),  
-  (6, 4, 'Walking And Game', 123),  
-  (6, 4, 'Young And Father', 197),  
-  (7, 5, 'Finding My Traditions', 179),  
-  (7, 5, 'Walking And Man', 229),  
-  (7, 5, 'Hard And Time', 135),    
-  (7, 5, "Honey, I'm A Lone Wolf", 150), 
-  (8, 5, "She Thinks I Won't Stay Tonight", 166),
-  (8, 5, "He Heard You're Bad For Me", 154),    
-  (8, 5, "He Hopes We Can't Stay", 210),    
-  (8, 5, "I Know I Know", 117),
-  (9, 5, "He's Walking Away", 159),    
-  (9, 5, "He's Trouble", 138),    
-  (9, 5, "I Heard I Want To Bo Alone", 120),    
-  (9, 5, "I Ride Alone", 151),   
-  (10, 6, "Honey",79),
-  (10, 6, "You Cheated On Me", 95),
-  (10, 6, "Wouldn't It Be Nice", 213),
-  (10, 6, "Baby", 136),
-  (10, 6, "you Make Me Feel So..", 83);
+  (1, 'Soul For Us', 200),
+  (1, 'Reflections Of Magic', 163),
+  (1, 'Dance With Her Own', 116),
+  (2, 'Troubles Of My Inner Fire', 203),
+  (2, 'Time Fireworks', 152),
+  (3, 'Magic Circus', 105),
+  (3, 'Honey, So Do I', 207),
+  (3, "Sweetie, Let's Go Wild", 139),
+  (3, 'She Knows', 244),
+  (4, 'Fantasy For Me', 100),
+  (4, 'Celebration Of More', 146),  
+  (4, 'Rock His Everything', 223),  
+  (4, 'Home Forever', 231),  
+  (4, 'Diamond Power', 241),  
+  (4, "Let's Be Silly", 132),  
+  (5, 'Thang Of Thunder', 240),
+  (5, 'Words Of Her Life', 185),  
+  (5, 'Without My Streets', 176), 
+  (6, 'Need Of The Evening', 190),  
+  (6, 'History Of My Roses', 222),  
+  (6, 'Without My Love', 111),  
+  (6, 'Walking And Game', 123),  
+  (6, 'Young And Father', 197),  
+  (7, 'Finding My Traditions', 179),  
+  (7, 'Walking And Man', 229),  
+  (7, 'Hard And Time', 135),    
+  (7, "Honey, I'm A Lone Wolf", 150), 
+  (8, "She Thinks I Won't Stay Tonight", 166),
+  (8, "He Heard You're Bad For Me", 154),    
+  (8, "He Hopes We Can't Stay", 210),    
+  (8, "I Know I Know", 117),
+  (9, "He's Walking Away", 159),    
+  (9, "He's Trouble", 138),    
+  (9, "I Heard I Want To Bo Alone", 120),    
+  (9, "I Ride Alone", 151),   
+  (10, "Honey",79),
+  (10, "You Cheated On Me", 95),
+  (10, "Wouldn't It Be Nice", 213),
+  (10, "Baby", 136),
+  (10, "you Make Me Feel So..", 83);
 
 INSERT INTO SpotifyClone.seguindo_artistas (seguidor_ida, seguido_ida)
 VALUES
