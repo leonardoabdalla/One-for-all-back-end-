@@ -164,7 +164,6 @@ VALUES
   (10, 2),
   (10, 6);
 
-
 INSERT INTO SpotifyClone.historico_reproducoes (usuario_idh, musica_idh)
 VALUES
   (1, 36),

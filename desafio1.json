@@ -5,7 +5,7 @@
     "tabela_que_contem_plano": "plano",
     "coluna_historico_de_reproducoes": "musica_idh",
     "tabela_que_contem_historico_de_reproducoes": "historico_reproducoes",
-    "coluna_seguindo_artistas": "seguindo_ida",
+    "coluna_seguindo_artistas": "seguido_ida",
     "tabela_que_contem_seguindo_artistas": "seguindo_artistas",
     "coluna_artista": "artista_id",
     "tabela_que_contem_artista": "artista",
