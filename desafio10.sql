@@ -5,7 +5,7 @@ ON m.musica_id = h.musica_idh
 INNER JOIN SpotifyClone.usuario AS u
 ON h.usuario_idh = u.usuario_id
 INNER JOIN SpotifyClone.plano AS p
-ON u.usuario_id = p.plano_id
+ON p.plano_id = u.plano_id
 WHERE p.plano_name = "gratuito" or p.plano_name = "pessoal"
 GROUP BY m.musica_name
 ORDER BY nome ASC;
